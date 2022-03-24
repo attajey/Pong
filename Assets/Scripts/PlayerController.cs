@@ -5,11 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed;
-    public float minX, maxX, minY, maxY;
-    public float fireRate = 0.2f;
-    public GameObject laser, laserSpawn;
+    public float minY, maxY;
 
-    private float timer = 0;
     private Rigidbody2D rBody;
 
     void Start()
@@ -19,29 +16,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        float horiz, vert;
+        float vert;
 
-        horiz = Input.GetAxis("Horizontal");
         vert = Input.GetAxis("Vertical");
 
-        Vector2 newVelocity = new Vector2(horiz, vert);
+        Vector2 newVelocity = new Vector2(0.0f, vert);
         GetComponent<Rigidbody2D>().velocity = newVelocity * speed;
 
-        float newX, newY;
-        newX = Mathf.Clamp(rBody.position.x, minX, maxX);
+        float newY;
         newY = Mathf.Clamp(rBody.position.y, minY, maxY);
 
-        rBody.position = new Vector2 (newX, newY);
+        rBody.position = new Vector2 (rBody.position.x, newY);
 
-        if (Input.GetAxis("Fire1") > 0 && timer > fireRate)
-        {
-
-            GameObject gObj;
-            gObj = GameObject.Instantiate(laser, laserSpawn.transform.position, laserSpawn.transform.rotation);
-            gObj.transform.Rotate(new Vector3(0, 0, 90));
-
-            timer = 0;
-        }
-        timer += Time.deltaTime;
     }
 }
