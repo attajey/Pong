@@ -23,6 +23,7 @@ public class PlayerController : MonoBehaviour
         Vector2 newVelocity = new Vector2(0.0f, vert);
         GetComponent<Rigidbody2D>().velocity = newVelocity * speed;
 
+
         //float newY;
         //newY = Mathf.Clamp(rBody.position.y, minY, maxY);
 
