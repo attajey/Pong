@@ -358,6 +358,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 811932433}
+  player1ScoreText: {fileID: 1964224582}
+  player2ScoreText: {fileID: 1628392424}
 --- !u!4 &349914054
 Transform:
   m_ObjectHideFlags: 0
@@ -838,7 +840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c967c1c40f75f046bd098caedd9fa6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 6.5
 --- !u!1 &965047839
 GameObject:
   m_ObjectHideFlags: 0

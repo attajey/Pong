@@ -36,8 +36,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
+    [System.Obsolete]
     void Update()
     {
-        
+        if (player1Score > 3 || player2Score > 3)
+        {
+            Application.LoadLevel("End");
+        }
     }
 }
