@@ -27,4 +27,9 @@ public class Ball : MonoBehaviour
     {
         
     }
+
+    public void ResetPosition()
+    {
+        rigidbody.position = Vector3.zero;
+    }
 }
