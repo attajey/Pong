@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -8,10 +9,14 @@ public class GameManager : MonoBehaviour
     private int player2Score;
     public Ball ball;
 
+    public Text player1ScoreText;
+    public Text player2ScoreText;
+
     public void Player1Scores()
     {
         player1Score++;
         Debug.Log("Player 1 : " + player1Score);
+        this.player1ScoreText.text = player1Score.ToString();
         this.ball.ResetPosition();
     }
 
@@ -19,6 +24,8 @@ public class GameManager : MonoBehaviour
     {
         player2Score++;
         Debug.Log("Player 2 : " + player2Score);
+        this.player2ScoreText.text = player2Score.ToString();
+
 
         this.ball.ResetPosition();
     }
